@@ -12,16 +12,16 @@
 This project includes automated CI/CD pipelines that build and release pre-built Docker images. No local build is required - you can pull and run the latest image directly.
 
 ### Latest Release
-- **Docker Image**: `ghcr.io/shuakami/mcp-ssh:latest`
+- **Docker Image**: `ghcr.io/sawyelin1011/mcp-ssh:latest`
 - **Automated**: Builds trigger on every push to main branch
-- **Releases**: Tagged versions create GitHub releases with Docker images
+- **Releases**: Nightly releases created automatically with timestamped tags
 
 ### Quick Docker Start
 ```bash
 # Pull and run the latest image
 docker run -v /host/data:/data \
            -e DATA_PATH=/data \
-           ghcr.io/shuakami/mcp-ssh:latest
+           ghcr.io/sawyelin1011/mcp-ssh:latest
 ```
 
 See the [Docker Configuration](#docker-configuration-automated) section below for complete setup instructions.
@@ -198,7 +198,7 @@ For automated deployment without local builds, you can use the pre-built Docker 
 
 1. Pull the latest image:
 ```bash
-docker pull ghcr.io/shuakami/mcp-ssh:latest
+docker pull ghcr.io/sawyelin1011/mcp-ssh:latest
 ```
 
 2. Create a configuration file `mcp.json`:
@@ -227,7 +227,7 @@ docker pull ghcr.io/shuakami/mcp-ssh:latest
         "PASSWORD_EXPIRY_DAYS=30",
         "-e",
         "COMMAND_TIMEOUT=60000",
-        "ghcr.io/shuakami/mcp-ssh:latest"
+        "ghcr.io/sawyelin1011/mcp-ssh:latest"
       ]
     }
   }
